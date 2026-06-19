@@ -8,6 +8,7 @@ Este proyecto es una aplicacion de prediccion de valor de vivienda construida co
 - Acceso a internet para consultar la API de DataRobot.
 - Credenciales validas de DataRobot:
   - `DATAROBOT_API_KEY`
+  - `DATAROBOT_KEY`, si el deployment lo requiere
   - `DATAROBOT_DEPLOYMENT_ID`
   - `DATAROBOT_HOST`
 
@@ -19,12 +20,6 @@ Las dependencias estan definidas en `requirements.txt`:
 streamlit>=1.35
 pandas>=2.0
 requests>=2.31
-```
-
-`predict.py` usa principalmente librerias estandar de Python, por lo que no requiere paquetes adicionales para importarse. Para conexiones SSL en entornos corporativos o maquinas con certificados desactualizados, puede ser util instalar certificados actualizados:
-
-```powershell
-pip install -U certifi "urllib3[secure]"
 ```
 
 ## Crear y activar el entorno virtual
@@ -70,8 +65,9 @@ Crear el archivo `.streamlit/secrets.toml` en la raiz del proyecto. Este archivo
 Ejemplo:
 
 ```toml
-DATAROBOT_API_KEY = "tu_api_key"
-DATAROBOT_DEPLOYMENT_ID = "tu_deployment_id"
+DATAROBOT_API_KEY = "tu_api_key_real"
+DATAROBOT_KEY = "tu_datarobot_key_si_el_deployment_lo_pide"
+DATAROBOT_DEPLOYMENT_ID = "6a34f06404f39a876cdc194b"
 DATAROBOT_HOST = "https://app.datarobot.com"
 ```
 
@@ -95,35 +91,10 @@ Streamlit abrira la aplicacion en el navegador. Normalmente la URL local sera:
 http://localhost:8501
 ```
 
-## Ejecutar predicciones por archivo CSV
-
-El archivo `predict.py` permite enviar predicciones batch a DataRobot desde consola.
-
-Formato general:
-
-```powershell
-python predict.py entrada.csv salida.csv DEPLOYMENT_ID --api_key TU_API_KEY --host https://app.datarobot.com
-```
-
-El CSV de entrada debe contener las columnas esperadas por el modelo. Para la app actual, las variables usadas son:
-
-```text
-longitud
-latitud
-edad_mediana_vivienda
-total_habitaciones
-total_dormitorios
-poblacion
-hogares
-ingreso_mediano
-proximidad_oceano
-```
-
 ## Estructura principal
 
 ```text
 app.py                  Aplicacion Streamlit interactiva.
-predict.py              Script de prediccion batch con DataRobot.
 requirements.txt        Dependencias del entorno virtual.
 REQUERIMIENTOS.md       Guia de instalacion y ejecucion.
 .streamlit/secrets.toml Credenciales locales, no versionadas.
