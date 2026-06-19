@@ -290,6 +290,157 @@ st.markdown(
             background: linear-gradient(90deg, #1a73e8, #7c3aed) !important;
             border-radius: 10px !important;
         }
+
+        @media (max-width: 768px) {
+            .main .block-container {
+                padding-top: 1rem;
+                padding-bottom: 1rem;
+            }
+
+            .hero {
+                padding: 1.5rem 1.25rem;
+                border-radius: 14px;
+            }
+
+            .hero::before, .hero::after {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: clamp(1.4rem, 5vw, 2rem);
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .hero .badge {
+                font-size: 0.75rem;
+                padding: 0.2rem 0.75rem;
+            }
+
+            .card {
+                padding: 1rem;
+                border-radius: 12px;
+            }
+
+            .card-title {
+                font-size: 0.95rem;
+            }
+
+            .card-title .icon {
+                width: 26px;
+                height: 26px;
+                font-size: 0.85rem;
+            }
+
+            .metric-card {
+                padding: 1rem;
+            }
+
+            .metric-card .value {
+                font-size: 1.6rem;
+            }
+
+            .metric-card .label {
+                font-size: 0.8rem;
+            }
+
+            .stTabs [data-baseweb="tab"] {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+            }
+
+            .stTabs [data-baseweb="tab-list"] {
+                padding: 0.15rem;
+            }
+
+            .upload-zone {
+                padding: 1.5rem 1rem;
+            }
+
+            .upload-zone div[style*="font-size:3rem"] {
+                font-size: 2rem !important;
+            }
+
+            .batch-header {
+                padding: 1rem;
+            }
+
+            .batch-header h4 {
+                font-size: 1rem;
+            }
+
+            .batch-header p {
+                font-size: 0.85rem;
+            }
+
+            .stSlider label, .stNumberInput label, .stSelectbox label {
+                font-size: 0.8rem !important;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .main .block-container {
+                max-width: 960px;
+                padding-top: 1.25rem;
+            }
+
+            .hero {
+                padding: 2rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+            }
+
+            .card {
+                padding: 1.25rem;
+            }
+
+            .metric-card .value {
+                font-size: 2rem;
+            }
+
+            .stTabs [data-baseweb="tab"] {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 1rem 0.9rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero h1 {
+                font-size: clamp(1.1rem, 5vw, 1.4rem);
+            }
+
+            .hero p {
+                font-size: 0.8rem;
+            }
+
+            .card {
+                padding: 0.75rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .card-title {
+                font-size: 0.85rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .metric-card .value {
+                font-size: 1.3rem;
+            }
+
+            .stButton > button {
+                min-height: 2.6rem;
+                font-size: 0.85rem;
+            }
+        }
     </style>
     """,
     unsafe_allow_html=True,
