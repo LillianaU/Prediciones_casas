@@ -1,6 +1,10 @@
 # Prediccion del valor medio de vivienda
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://casacostopredi.streamlit.app/)
+
 Aplicacion web desarrollada con **Streamlit** para consultar un modelo de regresion desplegado en **DataRobot**. El usuario modifica variables de entrada de una vivienda y la aplicacion envia esos datos al deployment para obtener una prediccion del valor medio estimado.
+
+**App desplegada:** [https://casacostopredi.streamlit.app/](https://casacostopredi.streamlit.app/)
 
 ## Vista general
 
