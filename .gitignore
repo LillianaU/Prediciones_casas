@@ -1,5 +1,5 @@
 .venv/
 .streamlit/secrets.toml
-_pycache_/
+__pycache__/
 *.pyc
 .DS_Store
